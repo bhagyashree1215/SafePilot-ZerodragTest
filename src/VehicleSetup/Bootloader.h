@@ -67,6 +67,13 @@ private:
     bool    _verifyCRC          (void);
     QString _getNextLine        (int timeoutMsecs);
     bool    _get3DRRadioBoardId (uint32_t& boardID);
+    //added below line
+    QString _imageSha256Hash;
+    bool _verifySHA256(const QByteArray& expectedChecksum);
+
+    bool _verifySha256(void);
+    QString getStoredSha256HashFromBootloader();
+
 
     enum {
         // protocol bytes
@@ -87,6 +94,7 @@ private:
         PROTO_PROG_MULTI =      0x27,   ///< write bytes at program address and increment
         PROTO_GET_CRC =         0x29,	///< compute & return a CRC
         PROTO_BOOT =            0x30,   ///< boot the application
+        PROTO_INVALID_SIGNATURE = 0x16, ///< invalid signature error
         
         // Command bytes - Rev 2 boootloader only
         PROTO_CHIP_VERIFY	=   0x24, ///< begin verify mode

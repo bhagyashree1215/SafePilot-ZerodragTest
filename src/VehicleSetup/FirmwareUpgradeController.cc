@@ -65,6 +65,8 @@ static QMap<int, QString> px4_board_name_map {
     {78, "holybro_pix32v5_default"},
     {79, "holybro_can-gps-v1_default"},
     {28, "nxp_fmuk66-v3_default"},
+    //zd
+    {28, "zerodrag_warp_f7_default"},
     {30, "nxp_fmuk66-e_default"},
     {31, "nxp_fmurt1062-v1_default"},
     {85, "freefly_can-rtk-gps_default"},
